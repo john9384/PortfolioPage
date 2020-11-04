@@ -1,0 +1,21 @@
+{
+  "name": "App Name",
+  "short_name": "AN",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "white",
+  "description": "A weather forcast app",
+  "icons": [
+    {
+      "src": "path to image file goes here. Note the sizes",
+      "sizes": "512x513",
+      "type": "image/png"
+    },
+    {
+      "src": "path to image file goes here. Note the sizes",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

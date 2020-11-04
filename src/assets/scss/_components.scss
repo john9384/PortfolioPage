@@ -1,0 +1,146 @@
+// Logo Component
+.logo {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  &__img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+  @media screen and (max-width: $res-small) {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+// Nav Component
+.nav {
+  height: 100%;
+  width: 45%;
+  position: relative;
+  transition: all 0.5s;
+  @media screen and (max-width: $res-medium) {
+    width: 60%;
+  }
+  @media screen and (max-width: $res-small) {
+    width: 5rem;
+  }
+
+  // Navigation Icon style
+  &__checkbox {
+    display: none;
+  }
+  &__button {
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    @media screen and (max-width: $res-small) {
+      display: block;
+    }
+  }
+  &__icon,
+  &__icon::before,
+  &__icon::after {
+    width: 3rem;
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s;
+  }
+  &__icon {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    z-index: inherit;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      left: 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 1rem;
+      left: 0;
+    }
+  }
+  &__checkbox:checked ~ .nav__list {
+    height: 50px;
+    .nav__item {
+      visibility: visible;
+    }
+  }
+  &__checkbox:checked + &__button,
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  // Navigation Lists
+  &__list {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    color: $color-text;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    transition: all 0.5s cubic-bezier(0.22, 0.65, 0.92, 0.68);
+    @media screen and (max-width: $res-small) {
+      background-color: $color-pry;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100vw;
+      height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 1.2rem;
+      .nav__item {
+        visibility: hidden;
+      }
+    }
+  }
+  &__item {
+    padding: 1rem 0;
+    border-radius: 3px;
+    text-align: center;
+    position: relative;
+    transition: all 0.5s;
+    &:active {
+      transform: translateY(-2px);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: -1px;
+      background-color: white;
+      width: 0%;
+      height: 2px;
+      transition: all 0.5s;
+    }
+    &:hover::after {
+      content: "";
+      width: 105%;
+    }
+  }
+  &__link {
+    color: inherit;
+  }
+}

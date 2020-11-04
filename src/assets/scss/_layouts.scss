@@ -1,0 +1,30 @@
+// Header Styles
+.header {
+  height: 60px;
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  background-color: $color-pry;
+  padding: 0 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: $res-small) {
+    padding: 0 20px;
+    height: 50px;
+  }
+}
+.email {
+  height: 30px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: $res-small) {
+    height: 30px;
+  }
+}
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}

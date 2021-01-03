@@ -10,44 +10,86 @@
     /> -->
     <!-- Manifest json link tag. Uncomment the link tag below to enable webmanifest -->
     <!-- <link rel="manifest" href="manifest.webmanifest" /> -->
+    <script src="./assets/jquery/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="email"><span>jogungbure@gmail.com</span></div>
-    <header class="header">
-      <div class="logo">
-        <img src="./assets/img/JD.jpg" class="logo__img" />
-      </div>
-      <nav class="nav">
-        <input type="checkbox" class="nav__checkbox" id="nav-toggle" />
+    <!-- <div class="email"><span>jogungbure@gmail.com</span></div> -->
+    <header id="home" class="header">
+      <div class="navbar">
+        <div class="container">
+          <div class="logo">
+            <img src="./assets/img/JD.jpg" class="logo__img" />
+            <span>John Damilola</span>
+          </div>
+          <nav class="nav">
+            <input type="checkbox" class="nav__checkbox" id="nav-toggle" />
 
-        <label for="nav-toggle" class="nav__button">
-          <span class="nav__icon">&nbsp;</span>
-        </label>
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-          <li class="nav__item">
-            <a href="#stack" class="nav__link">Stack</a>
-          </li>
-          <li class="nav__item">
-            <a href="#project" class="nav__link">Projects</a>
-          </li>
-          <li class="nav__item">
-            <a href="#article" class="nav__link">Article</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
-        </ul>
-      </nav>
+            <label for="nav-toggle" class="nav__button">
+              <span class="nav__icon">&nbsp;</span>
+            </label>
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#home" class="nav__link nav__link--home">Home</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about" class="nav__link nav__link--about">About</a>
+              </li>
+              <li class="nav__item">
+                <a href="#project" class="nav__link nav__link--projects"
+                  >Projects</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#articles" class="nav__link nav__link--articles"
+                  >Articles</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#contact" class="nav__link nav__link--contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="welcome">
+        <h1>Hi, I am Ogungbure John Damilola.</h1>
+        <h2>JavaScript Programmer</h2>
+        <button class="btn btn--pry cta"><a href="#">Learn me</a></button>
+      </div>
     </header>
     <main class="main">
-      <div id="home" class="welcome">
-        <div class="container"></div>
+      <div id="about" class="about">
+        <div class="container">
+          <div class="aims">
+            <div class="aim-card">
+              <h3></h3>
+              <div class="icon"></div>
+              <p>This is a small text this is a small text</p>
+            </div>
+            <div class="aim-card"></div>
+            <div class="aim-card"></div>
+          </div>
+          <div class="about__div">
+            <h1 class="typo-h1 about__head">Bio</h1>
+            <p class="about__note">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
+              id reiciendis voluptas, nobis maxime fugiat odio, porro sequi
+              provident impedit nulla. Repudiandae placeat optio et quisquam
+              quaerat harum praesentium expedita!
+            </p>
+          </div>
+        </div>
       </div>
+      <div id="projects" class="projects"></div>
+      <div id="articles" class="articles"></div>
+      <div id="contact" class="contact"></div>
     </main>
     <footer class="footer"><h1>Footer Section</h1></footer>
+    <script src="js/main.js"></script>
     <script>
       // Uncomment the code below to enable service worker access this file
       //   if (navigator.serviceWorker) {

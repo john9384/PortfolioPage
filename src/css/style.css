@@ -10,8 +10,18 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: "lato", Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth; }
+  scrollbar-width: thin;
+  scrollbar-color: #002147; }
+  html ::-webkit-scrollbar {
+    width: 10px; }
+  html ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px; }
+  html ::-webkit-scrollbar-thumb {
+    background: #004ea8;
+    border-radius: 3px; }
+  html ::-webkit-scrollbar-thumb:hover {
+    background: #002147; }
   @media screen and (max-width: 75em) {
     html {
       font-size: 56%; } }
@@ -20,7 +30,10 @@ html {
       font-size: 50%; } }
 
 body {
-  max-width: 100vw; }
+  max-width: 100%;
+  font-family: "lato", Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  overflow-y: scroll; }
 
 @keyframes appear {
   from {
@@ -43,10 +56,33 @@ a {
   a:active {
     outline: none; }
 
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 3rem 0; }
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  @media screen and (max-width: 37.5em) {
+    .navbar {
+      padding: 0 20px;
+      height: 50px; } }
+
 .logo {
-  height: 5rem;
-  width: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 50%; }
+  .logo img {
+    height: 5rem;
+    width: 5rem; }
+  .logo span {
+    font-size: 3rem;
+    color: white;
+    font-weight: 900;
+    margin-left: 3rem; }
   .logo__img {
     height: 100%;
     width: 100%;
@@ -126,7 +162,7 @@ a {
       .nav__list {
         background-color: #002147;
         position: fixed;
-        top: 80px;
+        top: 50px;
         left: 0;
         width: 100vw;
         height: 0;
@@ -159,24 +195,52 @@ a {
   .nav__link {
     color: inherit; }
 
-.header {
-  height: 60px;
-  width: 100vw;
-  position: sticky;
-  top: 0;
-  background-color: #002147;
-  padding: 0 10rem;
+.btn {
+  border: none;
+  transition: all 0.5s;
+  cursor: pointer; }
+  .btn:hover, .btn:active {
+    outline: none; }
+  .btn--pry {
+    background-color: #004ea8;
+    color: white;
+    font-weight: 700; }
+    .btn--pry:hover {
+      background-color: #002147;
+      color: whitesmoke; }
+
+.aims {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between; }
-  @media screen and (max-width: 37.5em) {
-    .header {
-      padding: 0 20px;
-      height: 50px; } }
+
+.header {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, rgba(0, 33, 71, 0.5), rgba(0, 33, 71, 0.4), rgba(0, 78, 168, 0.3), rgba(0, 78, 168, 0.1)), url("../assets/img/landing.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 1px 0 5px 2px rgba(0, 0, 0, 0.3); }
+
+.add-bg {
+  background-color: #002147 !important; }
+
+.projects {
+  height: 100vh;
+  background-color: green; }
+
+.articles {
+  height: 100vh;
+  background-color: yellow; }
+
+.contact {
+  height: 100vh;
+  background-color: purple; }
 
 .email {
   height: 30px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -186,8 +250,31 @@ a {
 
 .container {
   max-width: 114rem;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-color: transparent; }
 
 .welcome {
-  height: 70vh;
-  width: 100vw; }
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  letter-spacing: 2px; }
+  .welcome h1 {
+    font-size: 5rem;
+    margin: 1rem 0; }
+  .welcome h2 {
+    font-size: 4rem; }
+  .welcome .cta {
+    margin-top: 1.5rem;
+    padding: 2rem 5rem;
+    font-size: 2rem;
+    border-radius: 3px; }
+
+.about__div {
+  width: 70%;
+  margin: 3rem auto;
+  text-align: center; }

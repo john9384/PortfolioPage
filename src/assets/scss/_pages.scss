@@ -1,17 +1,33 @@
 // Welcome
 .welcome {
-  height: 70vh;
-  width: 100vw;
-  // background-color: black;
-  //   background-image: linear-gradient(
-  //     to bottom right,
-  //     rgba($color-pry, 0.9),
-  //     transparent,
-  //     rgba(#003775, 0.9)
-  //   );
-  //   // url("../assets/img/JD.jpg");
-  //   // background-image: url("../assets/img/JD.jpg");
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   background-position: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  letter-spacing: 2px;
+  h1 {
+    font-size: 5rem;
+    margin: 1rem 0;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  .cta {
+    margin-top: 1.5rem;
+    padding: 2rem 5rem;
+    font-size: 2rem;
+    border-radius: 3px;
+  }
+}
+// about
+.about {
+  &__div {
+    width: 70%;
+    margin: 3rem auto;
+    text-align: center;
+  }
 }

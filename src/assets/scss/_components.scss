@@ -1,8 +1,41 @@
-// Logo Component
+// 01 Navigation Bar Container
+// 02 Logo Component
+// 03 Nav Component
+// 04 Buttons
+// 05 Aim Card Component
+
+// 01 Navigation Bar Container
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 3rem 0;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: $res-small) {
+    padding: 0 20px;
+    height: 50px;
+  }
+}
+// 02 Logo Component
 .logo {
-  height: 5rem;
-  width: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 50%;
+  img {
+    height: 5rem;
+    width: 5rem;
+  }
+  span {
+    font-size: 3rem;
+    color: white;
+    font-weight: 900;
+    margin-left: 3rem;
+  }
   &__img {
     height: 100%;
     width: 100%;
@@ -14,7 +47,7 @@
   }
 }
 
-// Nav Component
+// 03 Nav Component
 .nav {
   height: 100%;
   width: 45%;
@@ -103,7 +136,7 @@
     @media screen and (max-width: $res-small) {
       background-color: $color-pry;
       position: fixed;
-      top: 80px;
+      top: 50px;
       left: 0;
       width: 100vw;
       height: 0;
@@ -143,4 +176,31 @@
   &__link {
     color: inherit;
   }
+}
+
+// 04 Buttons
+.btn {
+  border: none;
+  transition: all 0.5s;
+  cursor: pointer;
+  &:hover,
+  &:active {
+    outline: none;
+  }
+  &--pry {
+    background-color: $color-sec;
+    color: white;
+    font-weight: 700;
+    &:hover {
+      background-color: $color-pry;
+      color: whitesmoke;
+    }
+  }
+}
+
+// 05 Aim Card Component
+.aims {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

@@ -199,8 +199,34 @@
 }
 
 // 05 Aim Card Component
-.aims {
-  width: 100%;
+.aim-card {
+  height: 300px;
+  width: 250px;
+  border: 5px solid $color-tet;
+  border-radius: 5px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  //justify-content: space-around;
+  align-items: center;
+  padding: 3rem;
+  &__head {
+    font-size: 2rem;
+    color: $color-pry;
+  }
+  &__icon {
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto;
+  }
+  &__svg {
+    width: 100%;
+    height: 100%;
+    fill: $color-pry;
+  }
+  &__text {
+    font-size: 1.5rem;
+    line-height: 25px;
+    text-align: center;
+    color: $color-pry;
+  }
 }

@@ -24,7 +24,7 @@ $(".nav__link--home").click(function () {
   );
 });
 $(".nav__link--about").click(function () {
-  let aboutOffset = $("#about").offset().top;
+  let aboutOffset = $("#about").offset().top + 240;
   $("html, body").animate(
     {
       scrollTop: aboutOffset,
@@ -58,6 +58,19 @@ $(".nav__link--articles").click(function () {
 });
 $(".nav__link--contact").click(function () {
   let contactOffset = $("#contact").offset().top;
+  $("html, body").animate(
+    {
+      scrollTop: contactOffset,
+      transition: "all 1s cubic-bezier(.17,.67,.96,.65)"
+    },
+    1000,
+    "linear"
+  );
+});
+
+// Learn me cta
+$(".welcome__cta").click(function () {
+  let contactOffset = $("#about").offset().top + 240;
   $("html, body").animate(
     {
       scrollTop: contactOffset,

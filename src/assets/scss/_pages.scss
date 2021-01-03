@@ -16,7 +16,7 @@
   h2 {
     font-size: 4rem;
   }
-  .cta {
+  &__cta {
     margin-top: 1.5rem;
     padding: 2rem 5rem;
     font-size: 2rem;
@@ -25,9 +25,17 @@
 }
 // about
 .about {
+  margin: 15rem 0;
+  height: 50vh;
+  .aims {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
   &__div {
     width: 70%;
-    margin: 3rem auto;
+    margin: 15rem auto;
     text-align: center;
   }
 }

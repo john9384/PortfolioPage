@@ -209,10 +209,31 @@ a {
       background-color: #002147;
       color: whitesmoke; }
 
-.aims {
-  width: 100%;
+.aim-card {
+  height: 300px;
+  width: 250px;
+  border: 5px solid #00499e;
+  border-radius: 5px;
   display: flex;
-  justify-content: space-between; }
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem; }
+  .aim-card__head {
+    font-size: 2rem;
+    color: #002147; }
+  .aim-card__icon {
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto; }
+  .aim-card__svg {
+    width: 100%;
+    height: 100%;
+    fill: #002147; }
+  .aim-card__text {
+    font-size: 1.5rem;
+    line-height: 25px;
+    text-align: center;
+    color: #002147; }
 
 .header {
   height: 100vh;
@@ -227,16 +248,13 @@ a {
   background-color: #002147 !important; }
 
 .projects {
-  height: 100vh;
-  background-color: green; }
+  height: 100vh; }
 
 .articles {
-  height: 100vh;
-  background-color: yellow; }
+  height: 100vh; }
 
 .contact {
-  height: 100vh;
-  background-color: purple; }
+  height: 100vh; }
 
 .email {
   height: 30px;
@@ -268,13 +286,20 @@ a {
     margin: 1rem 0; }
   .welcome h2 {
     font-size: 4rem; }
-  .welcome .cta {
+  .welcome__cta {
     margin-top: 1.5rem;
     padding: 2rem 5rem;
     font-size: 2rem;
     border-radius: 3px; }
 
-.about__div {
-  width: 70%;
-  margin: 3rem auto;
-  text-align: center; }
+.about {
+  margin: 15rem 0;
+  height: 50vh; }
+  .about .aims {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; }
+  .about__div {
+    width: 70%;
+    margin: 15rem auto;
+    text-align: center; }

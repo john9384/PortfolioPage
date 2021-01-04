@@ -3,6 +3,7 @@
 // 03 Nav Component
 // 04 Buttons
 // 05 Aim Card Component
+// 06 Project Cards
 
 // 01 Navigation Bar Container
 .navbar {
@@ -15,6 +16,7 @@
     align-items: center;
     justify-content: space-between;
   }
+  z-index: 1000;
   @media screen and (max-width: $res-small) {
     padding: 0 20px;
     height: 50px;
@@ -208,7 +210,15 @@
   flex-direction: column;
   //justify-content: space-around;
   align-items: center;
+  background-color: whitesmoke;
+  box-shadow: 5px 5px 10px rgba(grey, 0.1);
   padding: 3rem;
+  transition: all 0.5s;
+  &:hover {
+    background-color: rgb(250, 250, 250);
+    transform: translate(-5px, -5px);
+    box-shadow: 10px 10px 10px rgba(grey, 0.2);
+  }
   &__head {
     font-size: 2rem;
     color: $color-pry;
@@ -228,5 +238,115 @@
     line-height: 25px;
     text-align: center;
     color: $color-pry;
+  }
+}
+// 06 Project Cards
+.proj-card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+  width: 100%;
+  &__side {
+    height: 100%;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(black, 0.15);
+    &--front {
+      background-color: white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+  // Front of the card
+  &__pic {
+    height: 50%;
+    width: 100%;
+    position: relative;
+    //overflow: hidden;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+  &__name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    font-size: 3rem;
+    background-color: $color-tet;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    width: 200px;
+    text-align: center;
+  }
+  &__stack {
+    list-style: none;
+    text-align: center;
+    margin: 3rem auto;
+    color: $color-pry;
+    li {
+      border-bottom: 1px solid grey;
+      font-size: 1.5rem;
+      padding: 1rem;
+      width: 17rem;
+      margin: 0 auto;
+    }
+    li:last-child {
+      border: none;
+    }
+  }
+  // Back of the card
+  &__summary {
+    font-size: 1.6rem;
+    line-height: 30px;
+  }
+  &__cta {
+    padding: 1rem 2rem;
+  }
+  //@include respond(tab-port) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-pry;
+    box-shadow: 0 1.5rem 4rem rgba(black, 0.15);
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
   }
 }

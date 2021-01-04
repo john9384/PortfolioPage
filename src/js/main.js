@@ -24,7 +24,7 @@ $(".nav__link--home").click(function () {
   );
 });
 $(".nav__link--about").click(function () {
-  let aboutOffset = $("#about").offset().top + 240;
+  let aboutOffset = $("#about").offset().top + 310;
   $("html, body").animate(
     {
       scrollTop: aboutOffset,
@@ -35,7 +35,7 @@ $(".nav__link--about").click(function () {
   );
 });
 $(".nav__link--projects").click(function () {
-  let projectsOffset = $("#projects").offset().top;
+  let projectsOffset = $("#projects").offset().top - 100;
   $("html, body").animate(
     {
       scrollTop: projectsOffset,
@@ -46,7 +46,7 @@ $(".nav__link--projects").click(function () {
   );
 });
 $(".nav__link--articles").click(function () {
-  let articlesOffset = $("#articles").offset().top;
+  let articlesOffset = $("#articles").offset().top - 100;
   $("html, body").animate(
     {
       scrollTop: articlesOffset,
@@ -57,7 +57,7 @@ $(".nav__link--articles").click(function () {
   );
 });
 $(".nav__link--contact").click(function () {
-  let contactOffset = $("#contact").offset().top;
+  let contactOffset = $("#contact").offset().top - 100;
   $("html, body").animate(
     {
       scrollTop: contactOffset,
@@ -70,7 +70,7 @@ $(".nav__link--contact").click(function () {
 
 // Learn me cta
 $(".welcome__cta").click(function () {
-  let contactOffset = $("#about").offset().top + 240;
+  let contactOffset = $("#about").offset().top + 310;
   $("html, body").animate(
     {
       scrollTop: contactOffset,

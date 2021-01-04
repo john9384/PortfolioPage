@@ -56,11 +56,16 @@ a {
   a:active {
     outline: none; }
 
+.typo-h1 {
+  font-size: 3.5rem;
+  color: #002147; }
+
 .navbar {
   width: 100%;
   position: fixed;
   top: 0;
-  padding: 3rem 0; }
+  padding: 3rem 0;
+  z-index: 1000; }
   .navbar .container {
     display: flex;
     align-items: center;
@@ -217,7 +222,14 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem; }
+  background-color: whitesmoke;
+  box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.1);
+  padding: 3rem;
+  transition: all 0.5s; }
+  .aim-card:hover {
+    background-color: #fafafa;
+    transform: translate(-5px, -5px);
+    box-shadow: 10px 10px 10px rgba(128, 128, 128, 0.2); }
   .aim-card__head {
     font-size: 2rem;
     color: #002147; }
@@ -235,6 +247,90 @@ a {
     text-align: center;
     color: #002147; }
 
+.proj-card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+  width: 100%; }
+  .proj-card__side {
+    height: 100%;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .proj-card__side--front {
+      background-color: white; }
+    .proj-card__side--back {
+      transform: rotateY(180deg);
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+  .proj-card:hover .proj-card__side--front {
+    transform: rotateY(-180deg); }
+  .proj-card:hover .proj-card__side--back {
+    transform: rotateY(0); }
+  .proj-card__pic {
+    height: 50%;
+    width: 100%;
+    position: relative; }
+  .proj-card__img {
+    width: 100%;
+    height: 100%; }
+  .proj-card__name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    font-size: 3rem;
+    background-color: #00499e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    width: 200px;
+    text-align: center; }
+  .proj-card__stack {
+    list-style: none;
+    text-align: center;
+    margin: 3rem auto;
+    color: #002147; }
+    .proj-card__stack li {
+      border-bottom: 1px solid grey;
+      font-size: 1.5rem;
+      padding: 1rem;
+      width: 17rem;
+      margin: 0 auto; }
+    .proj-card__stack li:last-child {
+      border: none; }
+  .proj-card__summary {
+    font-size: 1.6rem;
+    line-height: 30px; }
+  .proj-card__cta {
+    padding: 1rem 2rem; }
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    .proj-card {
+      height: auto;
+      border-radius: 3px;
+      background-color: #002147;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+      .proj-card__side {
+        height: auto;
+        position: relative;
+        box-shadow: none; }
+        .proj-card__side--back {
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%); }
+      .proj-card:hover .proj-card__side--front {
+        transform: rotateY(0); } }
+
 .header {
   height: 100vh;
   width: 100%;
@@ -245,16 +341,7 @@ a {
   box-shadow: 1px 0 5px 2px rgba(0, 0, 0, 0.3); }
 
 .add-bg {
-  background-color: #002147 !important; }
-
-.projects {
-  height: 100vh; }
-
-.articles {
-  height: 100vh; }
-
-.contact {
-  height: 100vh; }
+  background-color: #002147; }
 
 .email {
   height: 30px;
@@ -293,8 +380,7 @@ a {
     border-radius: 3px; }
 
 .about {
-  margin: 15rem 0;
-  height: 50vh; }
+  margin: 15rem 0; }
   .about .aims {
     width: 100%;
     display: flex;
@@ -303,3 +389,26 @@ a {
     width: 70%;
     margin: 15rem auto;
     text-align: center; }
+  .about__head {
+    text-align: center; }
+  .about__note {
+    font-size: 2rem;
+    line-height: 40px;
+    text-align: justify;
+    margin-top: 3rem; }
+
+.projects {
+  margin-bottom: 15rem; }
+  .projects__head {
+    text-align: center;
+    margin-bottom: 7rem; }
+  .projects__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 5rem; }
+
+.articles {
+  height: 100vh; }
+  .articles__head {
+    text-align: center;
+    margin-bottom: 7rem; }

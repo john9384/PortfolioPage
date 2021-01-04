@@ -1,4 +1,8 @@
-// Welcome
+// 01 Welcom
+// 02 about
+// 03 projects
+
+// 01 Welcome
 .welcome {
   text-align: center;
   width: 100%;
@@ -23,10 +27,9 @@
     border-radius: 3px;
   }
 }
-// about
+// 02 about
 .about {
   margin: 15rem 0;
-  height: 50vh;
   .aims {
     width: 100%;
     display: flex;
@@ -37,5 +40,33 @@
     width: 70%;
     margin: 15rem auto;
     text-align: center;
+  }
+  &__head {
+    text-align: center;
+  }
+  &__note {
+    font-size: 2rem;
+    line-height: 40px;
+    text-align: justify;
+    margin-top: 3rem;
+  }
+}
+.projects {
+  margin-bottom: 15rem;
+  &__head {
+    text-align: center;
+    margin-bottom: 7rem;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 5rem;
+  }
+}
+.articles {
+  height: 100vh;
+  &__head {
+    text-align: center;
+    margin-bottom: 7rem;
   }
 }
